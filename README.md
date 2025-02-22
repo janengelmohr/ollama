@@ -1,3 +1,27 @@
+Personal fork for running ollama on Ryzen iGPU with AMD Ryzen Embedded R1505G with Radeon Vega 3 
+
+To run this you will need:
+
+'''
+[Service]
+#ExecStart=/usr/local/bin/ollama serve
+# for some reason the binary needs to be in this folder
+ExecStart=/root/ollama/ollama serve
+User=root
+Group=root
+Restart=always
+RestartSec=3
+Environment=HCC_AMDGPU_TARGETS="gfx902"
+Environment=HSA_ENABLE_SDMA="0"
+Environment=HSA_OVERRIDE_GFX_VERSION="9.0.0"
+Environment=OLLAMA_DEBUG="0"
+Environment=OLLAMA_HOST="0.0.0.0:11434"
+Environment=OLLAMA_MAX_LOADED_MODELS="1"
+Environment=OLLAMA_NUM_PARALLEL="1"
+Environment=OLLAMA_LLM_LIBRARY="rocm_v60002"
+'''
+
+
 <div align="center">
  <img alt="ollama" height="200px" src="https://github.com/ollama/ollama/assets/3325447/0d0b44e2-8f4a-4e99-9b52-a5c1c741c8f7">
 </div>
