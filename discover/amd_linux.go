@@ -59,6 +59,9 @@ var (
 		"gfx1036", // Generic RDNA2
 		"gfx940",  // MI300A (CDNA3)
 		"gfx90c",  // Radeon Vega 7 (Ryzen 5600G)
+                "gfx902",  // Vega 3
+                "gfx9002",
+                "gfx900",
 	}
 
 	// ApuUseGTT indicates whether GTT memory allocation is enabled for the current APU
